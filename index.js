@@ -4,27 +4,25 @@ module.exports = (request, response) => {
 
   if (url === '/') {
     response.writeHead(302, {
-      Location: `https://zeit.co/blog/err-sh`
+      Location: `https://blog.expo.io`
     })
 
     response.end()
     return
   }
 
-  if (urlParts.length < 3) {
+  if (urlParts.length > 2) {
     return {
-      error: 'Please specify all the missing data (see the repo)!',
+      error: 'Invalid URL provided, should be in the form https://expo.fyi/slug-for-info-page-here',
       errorHandle: 'missing_data'
     }
   }
 
-  const isZeit = urlParts.length === 3
-  const user = isZeit ? 'zeit' : urlParts[1]
-  const repo = urlParts[isZeit ? 1 : 2]
-  const code = urlParts[isZeit ? 2 : 3]
+
+  const code = urlParts[1];
 
   response.writeHead(302, {
-    Location: `https://github.com/${user}/${repo}/blob/master/errors/${code}.md`
+    Location: `https://github.com/expo/fyi/blob/master/${code}.md`
   })
 
   response.end()

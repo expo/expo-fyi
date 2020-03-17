@@ -1,5 +1,5 @@
-# err.sh
+# expo.fyi
 
-This microservice forwards you to detailed error messages.
+This microservice forwards you to more detailed information about Expo topics.
 
-Example: https://err.sh/micro/path-missing
+Example: https://expo.fyi/bundle-identifier

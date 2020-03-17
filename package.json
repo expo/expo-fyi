@@ -1,15 +1,12 @@
 {
-  "name": "err-sh",
+  "name": "expo-fyi",
   "version": "1.2.0",
   "scripts": {
     "start": "micro",
     "dev": "micro-dev"
   },
-  "repository": "zeit/err-sh",
+  "repository": "expo/expo-fyi",
   "license": "MIT",
-  "now": {
-    "alias": "err.sh"
-  },
   "dependencies": {
     "micro": "9.0.1"
   },
