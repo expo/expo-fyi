@@ -12,10 +12,7 @@ module.exports = (request, response) => {
   }
 
   if (urlParts.length > 2) {
-    return {
-      error: 'Invalid URL provided, should be in the form https://expo.fyi/slug-for-info-page-here',
-      errorHandle: 'missing_data'
-    }
+    // who cares? try anyways
   }
 
 
