@@ -4,7 +4,7 @@ module.exports = (request, response) => {
 
   if (url === '/') {
     response.writeHead(302, {
-      Location: `https://blog.expo.io`
+      Location: `https://github.com/expo/fyi`
     })
 
     response.end()
