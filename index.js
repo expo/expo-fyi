@@ -18,7 +18,7 @@ module.exports = (request, response) => {
   const code = removeWeirdWindowsThing(removeQueryParam(urlParts[1]));
 
   response.writeHead(302, {
-    Location: `https://github.com/expo/fyi/blob/master/${code}.md`,
+    Location: `https://github.com/expo/fyi/blob/master/${removeMdExtension(code)}.md`,
   });
 
   response.end();
@@ -30,4 +30,8 @@ function removeQueryParam(text) {
 
 function removeWeirdWindowsThing(text) {
   return text.replace("%E2%80%8B", "");
+}
+
+function removeMdExtension(text) {
+  return text.replace(/\.md$/, "");
 }
