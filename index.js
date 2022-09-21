@@ -14,7 +14,7 @@ module.exports = async (request, response) => {
     } catch (e) {
       console.log(e);
     }
-  } else if (urlParts === 2) {
+  } else if (urlParts.length === 2) {
     const code = removeWeirdWindowsThing(removeQueryParam(urlParts[1]));
     const name = remapOldNames(removeMdExtension(code));
     redirectUrl = `https://github.com/expo/fyi/blob/main/${name}.md`;
