@@ -8,7 +8,10 @@
   "repository": "expo/expo-fyi",
   "license": "MIT",
   "dependencies": {
-    "micro": "9.0.1"
+    "mem": "8.1.1",
+    "micro": "9.0.1",
+    "node-fetch": "2",
+    "url-regex": "5.0.0"
   },
   "devDependencies": {
     "micro-dev": "1.4.0"
