@@ -7,6 +7,8 @@ module.exports = async (request, response) => {
   const urlParts = url.split("/");
   let redirectUrl;
 
+  console.log(urlParts);
+
   if (urlParts.length === 3 && (urlParts[1] === 'r' || urlParts[1] === 'redirect')) {
     try {
       const code = removeWeirdWindowsThing(removeQueryParam(urlParts[2]));
@@ -14,7 +16,7 @@ module.exports = async (request, response) => {
     } catch (e) {
       console.log(e);
     }
-  } else if (urlParts.length === 2) {
+  } else if (urlParts.length === 2 && urlParts[1] !== '' && urlParts[1] !== '/') {
     const code = removeWeirdWindowsThing(removeQueryParam(urlParts[1]));
     const name = remapOldNames(removeMdExtension(code));
     redirectUrl = `https://github.com/expo/fyi/blob/main/${name}.md`;
